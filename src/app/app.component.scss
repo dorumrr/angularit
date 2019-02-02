@@ -1,0 +1,6 @@
+.navbar-dark .navbar-nav .nav-link { color: #fff; }
+// .active { border-bottom: 3px solid #222; }
+.active { background: rgba(0,0,0,0.2); }
+// .nav-item:hover, .nav-item:focus { border-bottom: 3px solid #222; }
+.nav-item:hover { background: rgba(0,0,0,0.2); }
+a.nav-link a:hover { color: #fff !important }

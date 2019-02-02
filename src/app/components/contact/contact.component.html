@@ -1,0 +1,17 @@
+<p class="text-black-50">
+  Contact form
+</p>
+
+<input [(ngModel)]="contact.name" [disabled]="contact.sending" placeholder="Name" class="form-control my-2" type="text">
+<input [(ngModel)]="contact.email" [disabled]="contact.sending" placeholder="Email" class="form-control my-2" type="email">
+<textarea [(ngModel)]="contact.message" [disabled]="contact.sending" placeholder="Message" class="form-control my-2"></textarea>
+
+<button class="btn btn-outline-primary pull-right"
+  (click)="submitContactForm(); contact.sending=true"
+  [disabled]="contact.sending || contact.name?.length <= 3 || contact.email?.length <= 6 || contact.message?.length <= 20">{{contact.sending ? 'Working...' : 'Send'}}</button>
+
+<div class="pt-3">
+  <ngb-alert *ngIf="output" [dismissible]="false">
+    <pre class="pt-3 pb-2">{{output}}</pre>
+  </ngb-alert>
+</div>
